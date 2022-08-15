@@ -1,5 +1,5 @@
 # Flask-Boostrap-Blog-Project
-# Python ve Flask ile Blog projeme hoş geldiniz.
+# Python - FLASK framework ile Blog projeme hoş geldiniz.
 ## Bu Proje Kendimi Geliştirmek Amaçlı Yapılmıştır.
 
 projede kullanıcıya bilgi vermek için kullanılan message.html dosyası
