@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+{% from "includes/_formhelpers.html" import render_field %}
+<strong><h3>Giriş Yap</h3></strong>
+<hr>
+<form method="post">
+    <div class = "row d-flex justify-content-center ">
+    <dl>
+        {{render_field(form.username,class="form-control") }}
+        {{render_field(form.password,class="form-control")}}
+
+    </dl>
+</div>
+<div class = "row d-flex justify-content-center " >
+<p><button type=submit class="btn btn-primary btn-lg">Giriş Yap</button></p>
+</div>
+<hr>
+
+</form>
+{% endblock body %}

@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="/">YB Blog</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/about">Hakkımızda</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/articles">Makaleler</a>
+      </li>
+    </ul>
+  </div>
+      <div class= "d-flex align-items-center">
+      <button class="btn btn-outline-success my-2 mx-2 my-sm-0" type="submit">Ara</button>
+      <form class="form-inline my-2 mr-3 my-lg-0 me-3" action="/search" method="post">
+      <input class="form-control " class ="input-sm" type="text" placeholder="Arama yap..." name = "keyword" maxlength="64">
+    </div>
+      </form>
+      <div class="btn-group">
+      <button type="button" class="btn btn-secondary dropdown-toggle bg-dark" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+      </button>
+      <div class="dropdown-menu" style="position: absolute; inset: 1px 1px auto auto; margin: 0px; transform: translate(0px, 40px); ">
+              <!--giris karşılaştırmasına eklediğimiz session sayesinde burdaki koşul durumu ile giriş ve çıkış butonlarının ekran da görünme koşullarını ayarlayabiliriz.-->
+              {% if session["logged_in"] %}<!--session true ise bu koşula girer ve çıkış yap butonu ekrana gösterilir.-->
+                <li><a class="dropdown-item"  href="/dashboard">Kontrol Paneli</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item"  href="/logout">Çıkış Yap</a></li>
+                {% else %}<!--Eğer session logged in false ise çıkış butonu yerine giriş butonu gözükür.-->
+                <li><a class="dropdown-item" href="/login">Giriş Yap</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li><a class="dropdown-item" href="/register">Kayıt Ol</a></li>
+                {% endif %}
+              </div>
+          </div>
+</nav>
+

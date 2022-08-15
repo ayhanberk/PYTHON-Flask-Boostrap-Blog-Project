@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="/">YB Blog</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/about">Hakkımızda</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/articles">Makaleler</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+      <!--giris karşılaştırmasına eklediğimiz session sayesinde burdaki koşul durumu ile giriş ve çıkış butonlarının görünme koşullarını ayarlayabiliriz.-->
+      {% if session["logged_in"] %}<!--session true ise bu koşula girer ve çıkış yap butonu ekrana gösterilir.-->
+      <li class="nav-item active">
+        <a class="nav-link" href="/dashboard">Kontrol Paneli</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="/logout">Çıkış Yap</a>
+      </li>
+      {% else %}<!--Eğer session logged in false ise çıkış butonu yerine giriş butonu gözükür.-->
+      <li class="nav-item active">
+        <a class="nav-link" href="/login">Giriş Yap</a>
+      </li>
+      {% endif %}
+      <li class="nav-item active">
+          <a class="nav-link" href="/register">Kayıt Ol</a>
+        </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Arama yap...">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Ara</button>
+    </form>
+  </div>
+</nav>
+
